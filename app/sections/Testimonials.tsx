@@ -3,6 +3,7 @@ import avatar2 from "@/assets/avatar-2.png";
 import avatar3 from "@/assets/avatar-3.png";
 import avatar4 from "@/assets/avatar-4.png";
 import { Avatar, AvatarImage } from "@/components/ui/avatar";
+import MarqueeWrapper from "@/components/wrappers/marquee-wrapper";
 
 const testimonials = [
   {
@@ -43,11 +44,11 @@ export const Testimonials = () => {
           strategies.
         </p>
         <div>
-          <div className="flex items-center overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-            <div className="flex items-center space-x-5">
-              {testimonials.map((testimonial, index) => (
+          <div className="flex items-center overflow-hidden pt-10 [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+            <MarqueeWrapper className="flex items-center space-x-5">
+              {[...testimonials, ...testimonials].map((testimonial, index) => (
                 <div
-                  className="max-w-md flex-none rounded-xl border border-white/15 bg-[linear-gradient(to_bottom_left,rgb(140,69,255,0.3),black)] p-6 md:p-10"
+                  className="max-w-md flex-none -translate-x-1/2 rounded-xl border border-white/15 bg-[linear-gradient(to_bottom_left,rgb(140,69,255,0.3),black)] p-6 pr-14 md:p-10"
                   key={index}
                 >
                   <p className="max-w-xs text-lg tracking-tight md:max-w-sm md:text-2xl">
@@ -71,7 +72,7 @@ export const Testimonials = () => {
                   </div>
                 </div>
               ))}
-            </div>
+            </MarqueeWrapper>
           </div>
         </div>
       </div>
