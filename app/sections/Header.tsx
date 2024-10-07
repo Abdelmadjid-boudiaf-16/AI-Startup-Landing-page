@@ -7,15 +7,15 @@ import DesktopNavbar from "@/components/header/desktop-navbar";
 
 export const Header = () => {
   return (
-    <header className="sticky top-0 z-10 mx-auto max-w-2xl border-b border-white/15 py-4 md:border-0">
-      <Card className="container border-0 backdrop-blur-lg md:rounded-xl md:border md:p-2.5">
+    <header className="sticky top-0 z-10 mx-auto max-w-2xl border-b border-white/15 py-4 backdrop-blur md:border-0 md:backdrop-blur-none">
+      <Card className="container border-0 md:rounded-xl md:border md:p-2.5 md:backdrop-blur-lg">
         <div className="flex items-center justify-between">
           <div className="flex h-10 w-10 items-center justify-center rounded-md border border-white/15">
             <LogoIcon className="h-8 w-8" />
           </div>
           <DesktopNavbar />
           <div className="flex items-center space-x-4">
-            <MagicButton text="join whitelist" />
+            <MagicButton text="Join waitlist" />
             <MobileNavbar />
           </div>
         </div>

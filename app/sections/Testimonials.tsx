@@ -40,7 +40,7 @@ export const Testimonials = () => {
           Beyond Expectations.
         </h2>
         <p className="mx-auto max-w-[672px] pt-5 text-center text-lg leading-7 text-white/70 md:text-xl">
-          Our revolutionary AI SEO tools have transformed our clients'
+          Our revolutionary AI SEO tools have transformed our clients&apos;
           strategies.
         </p>
         <div>

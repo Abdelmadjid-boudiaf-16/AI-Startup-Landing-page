@@ -37,17 +37,17 @@ const MobileNavbar = () => {
           <MenuIcon />
         </SheetTrigger>
         <SheetContent>
-          <SheetHeader>
+          <SheetHeader className="flex flex-col p-10 gap-5">
             <SheetTitle>
               <LogoIcon className="h-8 w-8" />
             </SheetTitle>
-            <SheetDescription className="flex flex-col gap-2">
+            <SheetDescription className="flex flex-col gap-3">
               {linkList.map((item, idx) => (
-                <li key={idx} className="list-none">
+                <li key={idx} className="list-none transition-all duration-500 hover:translate-x-3 hover:scale-105">
                   <Link
                     href={item.path}
                     className={cn(
-                      "font-medium text-white/40 transition-colors duration-300 hover:text-white",
+                      "font-medium text-white/70 transition-colors duration-300 hover:text-white",
                     )}
                   >
                     <SheetTrigger>{item.link}</SheetTrigger>

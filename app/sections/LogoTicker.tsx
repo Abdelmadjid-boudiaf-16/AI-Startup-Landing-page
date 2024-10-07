@@ -5,6 +5,7 @@ import celestialLogo from "@/assets/logo-celestial.png";
 import apexLogo from "@/assets/logo-apex.png";
 import quantumLogo from "@/assets/logo-quantum.png";
 import MarqueeWrapper from "@/components/wrappers/marquee-wrapper";
+import Image from "next/image";
 export const LogoTicker = () => {
   return (
     <section className="py-20 md:py-24">
@@ -32,9 +33,11 @@ export const LogoTicker = () => {
                 quantumLogo,
               ].map((logo, index) => (
                 <div key={index} className="h-6 w-auto">
-                  <img
+                  <Image
                     src={logo.src}
                     alt={logo.src}
+                    width={500}
+                    height={500}
                     className="h-full w-full"
                   />
                 </div>

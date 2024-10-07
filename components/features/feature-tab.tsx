@@ -1,14 +1,14 @@
 "use client";
 import React, { Dispatch, SetStateAction, useRef } from "react";
 import { Card } from "../ui/card";
-import { DotLottiePlayer } from "@dotlottie/react-player";
+import {
+  DotLottiePlayer,
+  DotLottieCommonPlayer,
+} from "@dotlottie/react-player";
 type Props = {
   icon: string;
   title: string;
   isNew: boolean;
-  backgroundPositionX: number;
-  backgroundPositionY: number;
-  backgroundSizeX: number;
   index: number;
   setCurrentIndex: Dispatch<SetStateAction<number>>;
   selected: boolean;
@@ -19,15 +19,13 @@ const FeatureTab = ({
   icon,
   title,
   isNew,
-  backgroundPositionX,
-  backgroundPositionY,
-  backgroundSizeX,
   index,
   setCurrentIndex,
   selected,
 }: Props) => {
   const dadRef = useRef<HTMLDivElement>(null);
-  const dotLottieRef = useRef<DotLottiePlayer>(null);
+
+  const dotLottieRef = useRef<DotLottieCommonPlayer>(null);
   const handleTabHover = () => {
     if (dotLottieRef.current === null) return;
     dotLottieRef.current.seek(0);

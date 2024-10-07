@@ -4,17 +4,23 @@ import { ReactNode, useRef } from "react";
 
 import starsBg from "@/assets/stars.png";
 
-const SectionWrapper = ({ children, className }: { children: ReactNode; className:string }) => {
-    const sectionRef = useRef();
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ['start end', 'end']
-    })
-    const backgroundPositionY = useTransform(
-        scrollYProgress,
-        [0, 1],
-        [-300,300]
-    )
+const SectionWrapper = ({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className: string;
+}) => {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ["start end", "end"],
+  });
+  const backgroundPositionY = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [-300, 300],
+  );
   return (
     <motion.section
       className={className}

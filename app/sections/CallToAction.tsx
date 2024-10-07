@@ -14,8 +14,8 @@ import {
 import { RefObject, useEffect, useRef } from "react";
 
 export const CallToAction = () => {
-  const sectionRef = useRef(null);
-  const divRef = useRef<RefObject<RefObject<HTMLDivElement>>>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const divRef = useRef<HTMLDivElement>(null);
   const useRelativeMousePosition = (to: RefObject<HTMLDivElement>) => {
     const mouseX = useMotionValue(0);
     const mouseY = useMotionValue(0);

@@ -1,10 +1,9 @@
 "use client";
 import {
-  animate,
-  motion,
+  animate, motion,
   useMotionTemplate,
   useMotionValue,
-  ValueAnimationOptions,
+  ValueAnimationOptions
 } from "framer-motion";
 import React, { useEffect } from "react";
 
@@ -27,15 +26,24 @@ const BorderAnimation = ({
       (width * 2 + height) / circumference,
       1,
     ];
-    const options: ValueAnimationOptions = {
+    const options1: ValueAnimationOptions = {
       times,
       duration: 4,
       repeat: Infinity,
       ease: "linear",
       repeatType: "loop",
+      keyframes: [0, 100, 100, 0, 0],
     };
-    animate(xPercentage, [0, 100, 100, 0, 0], options);
-    animate(yPercentage, [0, 0, 100, 100, 0], options);
+    const options2: ValueAnimationOptions = {
+      times,
+      duration: 4,
+      repeat: Infinity,
+      ease: "linear",
+      repeatType: "loop",
+      keyframes: [0, 0, 100, 100, 0],
+    };
+    animate(xPercentage, [0, 100, 100, 0, 0], options1);
+    animate(yPercentage, [0, 0, 100, 100, 0], options2);
   }, [xPercentage, yPercentage, dadRef]);
   return (
     <motion.div
